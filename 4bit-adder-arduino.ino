@@ -1,16 +1,22 @@
+#include <math.h>
+
 void setup()
 {
+    // put your setup code here, to run once:
 
+    // first nibble input pins
     int a1 = 2;
     int a2 = 3;
     int a3 = 4;
     int a4 = 5;
 
+    // second nibble input pins
     int b1 = 9;
     int b2 = 10;
     int b3 = 11;
     int b4 = 12;
 
+    // nibble as an array
     int a[] = {a1, a2, a3, a4};
     int b[] = {b1, b2, b3, b4};
 
@@ -26,7 +32,7 @@ void setup()
     pinMode(b3, OUTPUT);
     pinMode(b4, OUTPUT);
 
-    countInput(b);
+    countInput(b, bits(4));
 }
 
 void loop()
@@ -49,9 +55,9 @@ void testLights()
     }
 }
 
-void countInput(int array[])
+void countInput(int array[], int bits)
 {
-    for (int number = 0; number < 16; number++)
+    for (int number = 0; number < bits; number++)
     {
         if (1 << 0 & number)
         {
@@ -76,4 +82,9 @@ void countInput(int array[])
         digitalWrite(array[2], LOW);
         digitalWrite(array[3], LOW);
     }
+}
+
+int bits(int numberOfBits)
+{
+    return pow(2, numberOfBits);
 }
