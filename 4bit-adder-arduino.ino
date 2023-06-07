@@ -26,31 +26,7 @@ void setup()
     pinMode(b3, OUTPUT);
     pinMode(b4, OUTPUT);
 
-    for (int number = 0; number < 16; number++)
-    {
-        if (1 << 0 & number)
-        {
-            digitalWrite(2, HIGH);
-        }
-        if (1 << 1 & number)
-        {
-            digitalWrite(3, HIGH);
-        }
-        if (1 << 2 & number)
-        {
-            digitalWrite(a3, HIGH);
-        }
-        if (1 << 3 & number)
-        {
-            digitalWrite(a4, HIGH);
-        }
-        delay(1000);
-
-        digitalWrite(a[0], LOW);
-        digitalWrite(a[1], LOW);
-        digitalWrite(a[2], LOW);
-        digitalWrite(a[3], LOW);
-    }
+    countInput(b);
 }
 
 void loop()
@@ -70,5 +46,34 @@ void testLights()
         digitalWrite(b, HIGH);
         delay(1000);
         digitalWrite(b, LOW);
+    }
+}
+
+void countInput(int array[])
+{
+    for (int number = 0; number < 16; number++)
+    {
+        if (1 << 0 & number)
+        {
+            digitalWrite(array[0], HIGH);
+        }
+        if (1 << 1 & number)
+        {
+            digitalWrite(array[1], HIGH);
+        }
+        if (1 << 2 & number)
+        {
+            digitalWrite(array[2], HIGH);
+        }
+        if (1 << 3 & number)
+        {
+            digitalWrite(array[3], HIGH);
+        }
+        delay(1000);
+
+        digitalWrite(array[0], LOW);
+        digitalWrite(array[1], LOW);
+        digitalWrite(array[2], LOW);
+        digitalWrite(array[3], LOW);
     }
 }
