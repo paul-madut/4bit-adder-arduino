@@ -1,16 +1,26 @@
+int a1 = 2;
+int a2 = 3;
+int a3 = 4;
+int a4 = 5;
+
+int b1 = 9;
+int b2 = 10;
+int b3 = 11;
+int b4 = 12;
+
 void setup()
 {
     Serial.begin(9600);
 
-    pinMode(2, OUTPUT);
-    pinMode(3, OUTPUT);
-    pinMode(4, OUTPUT);
-    pinMode(5, OUTPUT);
+    pinMode(a1, OUTPUT);
+    pinMode(a2, OUTPUT);
+    pinMode(a3, OUTPUT);
+    pinMode(a4, OUTPUT);
 
-    pinMode(9, OUTPUT);
-    pinMode(10, OUTPUT);
-    pinMode(11, OUTPUT);
-    pinMode(12, OUTPUT);
+    pinMode(b1, OUTPUT);
+    pinMode(b2, OUTPUT);
+    pinMode(b3, OUTPUT);
+    pinMode(b4, OUTPUT);
 
     testLights();
 }
