@@ -32,6 +32,11 @@ void setup()
     pinMode(b3, OUTPUT);
     pinMode(b4, OUTPUT);
 
+    pinMode(A0, OUTPUT);
+    pinMode(A1, OUTPUT);
+    pinMode(A2, OUTPUT);
+    pinMode(A3, OUTPUT);
+
     countInput(b, bits(4));
 }
 
