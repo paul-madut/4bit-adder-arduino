@@ -20,6 +20,12 @@ void setup()
     int a[] = {a1, a2, a3, a4};
     int b[] = {b1, b2, b3, b4};
 
+    // input pins for the
+    int a_down = A0;
+    int a_up = A1;
+    int b_down = A2;
+    int b_up = A3;
+
     Serial.begin(9600);
 
     pinMode(a1, OUTPUT);
@@ -32,10 +38,10 @@ void setup()
     pinMode(b3, OUTPUT);
     pinMode(b4, OUTPUT);
 
-    pinMode(A0, OUTPUT);
-    pinMode(A1, OUTPUT);
-    pinMode(A2, OUTPUT);
-    pinMode(A3, OUTPUT);
+    pinMode(a_up, OUTPUT);
+    pinMode(a_down, OUTPUT);
+    pinMode(b_up, OUTPUT);
+    pinMode(b_down, OUTPUT);
 
     countInput(b, bits(4));
 }
